@@ -1,0 +1,19 @@
+name: github-actions-parallelism
+description: Splits for parallelization with equal time
+inputs:
+  ci_index:
+    required: true
+  ci_total:
+    required: true
+  glob:
+    description: Glob pattern to find test files (default "tests/**/*.ts") (string)
+    required: true
+    default: tests/**/*.ts
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+
+branding:
+  color: purple
+  icon: send

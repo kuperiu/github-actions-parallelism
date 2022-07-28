@@ -1,0 +1,32 @@
+{
+  "name": "github-actions-parallelism",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/main.ts -o dist",
+    "lint": "eslint src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuperiu/github-actions-parallelism.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kuperiu/github-actions-parallelism/issues"
+  },
+  "homepage": "https://github.com/kuperiu/github-actions-parallelism#readme",
+  "dependencies": {
+    "@actions/core": "^1.9.0",
+    "glob": "^8.0.3",
+    "@actions/github": "^4.0.0",
+    "@types/shelljs": "^0.8.8",
+    "@typescript-eslint/eslint-plugin": "^3.5.0",
+    "@typescript-eslint/parser": "^3.5.0",
+    "@zeit/ncc": "^0.22.3",
+    "eslint": "^7.4.0",
+    "shelljs": "0.8.4",
+    "typescript": "^3.9.6"
+  }
+}
