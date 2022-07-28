@@ -12017,11 +12017,9 @@ function run() {
         const files = glob.sync(path);
         const chunks = splitChunks(files, ciTotal);
         if (chunks[ciIndex]) {
-            chunks[ciIndex].forEach(function (file) {
-                if (shell.exec(cmd + ' ' + file).code !== 0) {
-                    throw new Error();
-                }
-            });
+            if (shell.exec(cmd + ' ' + chunks[ciIndex]).code !== 0) {
+                throw new Error();
+            }
         }
     }
     catch (error) {
