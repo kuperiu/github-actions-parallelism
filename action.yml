@@ -5,7 +5,9 @@ inputs:
     required: true
   ci_total:
     required: true
-  glob:
+  cmd:
+    required: true
+  path:
     description: Glob pattern to find test files (default "tests/**/*.ts") (string)
     required: true
     default: tests/**/*.ts

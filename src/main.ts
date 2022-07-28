@@ -1,5 +1,6 @@
 import * as core from '@actions/core'
 import * as glob from 'glob'
+import * as shell from 'shelljs'
 
 function splitChunks(items: string[], total: number) {
     let chunks: string[][] = []
@@ -26,6 +27,7 @@ function run() {
         const ciIndex = Number(core.getInput('ci_index'))
         const ciTotal = Number(core.getInput('ci_total'))
         const path = core.getInput('path')
+        const cmd = core.getInput('cmd')
         if (!ciIndex) {
             throw new Error(`No input ci_index defined`)
         }
@@ -35,12 +37,17 @@ function run() {
         if (!path) {
             throw new Error(`No input path defined`)
         }
+        if (!cmd) {
+            throw new Error(`No input cmd defined`)
+        }
         const files = glob.sync(path)
         const chunks = splitChunks(files, ciTotal)
 
         if (chunks[ciIndex]) {
-            chunks[ciIndex].forEach(function (value) {
-                console.log(value);
+            chunks[ciIndex].forEach(function (file) {
+                if (shell.exec(cmd + ' ' + file).code !== 0) {
+                    throw new Error()
+                }
               })
         }
     }

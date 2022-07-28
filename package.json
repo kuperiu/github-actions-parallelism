@@ -19,14 +19,14 @@
   "homepage": "https://github.com/kuperiu/github-actions-parallelism#readme",
   "dependencies": {
     "@actions/core": "^1.9.0",
-    "glob": "^8.0.3",
     "@actions/github": "^4.0.0",
     "@types/shelljs": "^0.8.8",
     "@typescript-eslint/eslint-plugin": "^3.5.0",
     "@typescript-eslint/parser": "^3.5.0",
     "@zeit/ncc": "^0.22.3",
     "eslint": "^7.4.0",
-    "shelljs": "0.8.4",
+    "glob": "^8.0.3",
+    "shelljs": "^0.8.4",
     "typescript": "^3.9.6"
   }
 }
